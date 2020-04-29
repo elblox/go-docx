@@ -157,12 +157,18 @@ func (doc *Docx) WriteTo(w io.Writer) (int64, error) {
 			if len(buffer) == 0 {
 				if !isCharData {
 					err = encoder.EncodeToken(fixNS(token))
+					if err != nil {
+						return total, err
+					}
 					continue
 				}
 				if openingBracketIdx != -1 {
 					buffer = append(buffer, xml.CopyToken(token))
 				} else {
 					err = encoder.EncodeToken(fixNS(token))
+					if err != nil {
+						return total, err
+					}
 				}
 				if closingBracketIdx > openingBracketIdx {
 					buffer.Process(encoder, doc.dict)

@@ -69,7 +69,7 @@ func TestOpenAndSaveDocx(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	n, err = io.Copy(file, buf)
+	_, err = io.Copy(file, buf)
 	if err != nil {
 		t.Fatal(err)
 	}
