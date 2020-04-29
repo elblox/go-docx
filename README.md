@@ -1,4 +1,7 @@
 # Docx
+
+[![Go Report Card](https://goreportcard.com/badge/github.com/elblox/go-docx)](https://goreportcard.com/report/github.com/elblox/go-docx)
+
 Docx is a simple package for for filling out documents prepared in [Office Open XML](https://en.wikipedia.org/wiki/Office_Open_XML) format,
 usually saved as a filename with `.docx` extension.
 
